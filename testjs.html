@@ -4,18 +4,7 @@
     <p id='actors'> ${actors}</p>
 <div class="row">
 <div class="col-xs-12 col-md-12">
-<div class="panel panel-primary"><!-- WARNING: the ids "collapseTrigger" and "instructionBody" are being used to enable expand/collapse feature --><a class="panel-heading" href="javascript:void(0);" id="collapseTrigger"><strong>Audio/Video Transcription Instructions</strong> <span class="collapse-text">(Click to expand)</span> </a>
-<div class="panel-body" id="instructionBody">
-<p>Listen to a short video and transcribe what is said.</p>
-
-<ul>
-	<li><strong>Do not </strong>include &quot;hmm&quot; and &quot;err&quot; in the transcription.</li>
-	<li><strong>Do not </strong>correct for grammar mistakes but transcribe as spoken.</li>
-	<li>Use punctuation where appropriate.</li>
-	<li>Indicate different speakers with &quot;speaker 1&quot; or &quot;speaker 2&quot;.</li>
-</ul>
-</div>
-</div>
+<p>Consigne générale à écrire ici ...........</p>
 </div>
 </div>
 <!-- End Instructions --><!-- Video transcription layout -->
@@ -30,8 +19,7 @@
 
 <div class="checkbox">
     
-    <p id='printActors'>Print actors</p>
-    <p id='printSplit'>Print split</p>
+    <p id='instructions'>For each person check the box if you see them in the video</p>
     <label id="act1"><input name="presentActor" type="checkbox" value="Child"/>Child</label><br />
     <label id="act2"><input name="presentActor" type="checkbox" value="Parent"/>Parent</label><br />
     <label id="act3"><input name="presentActor" type="checkbox" value="act3"/>Act3</label><br />
@@ -90,16 +78,10 @@ textarea.form-control{
         }
 
     }
-    
 
-    /*
-    var acteurlist = "";
-    for (var a in act){
-        acteurlist = acteurlist + act[a];
-    }
-    */
 
     $(document).ready(function() {
+        var act = $('#actors').hide();
         // Instructions expand/collapse
         var content = $('#instructionBody');
         var trigger = $('#collapseTrigger');
