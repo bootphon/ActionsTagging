@@ -30,12 +30,16 @@
 <!-- Worker input -->
 
 <div class="checkbox">
-<p id="instructions">For each person check the box if you see them in the video</p>
+<p class="instructions">For each person check the box if you see them in the video</p>
 <label id="act1"><input name="presentActor" type="checkbox" value="Child" /><span>Child</span></label><br />
 <label id="act2"><input name="presentActor" type="checkbox" value="Parent" /><span>Parent</span></label><br />
 <label id="act3"><input name="presentActor" type="checkbox" value="act3" /><span>Act3</span></label><br />
 <label id="act4"><input name="presentActor" type="checkbox" value="act4" /><span>Act4</span></label><br />
 <label id="act5"><input name="presentActor" type="checkbox" value="act5" /><span>Act5</span></label></div>
+
+<p class="instructions">Do you see more than <span class="nbAct">X</span> persons in the video ?
+<label id="additionnalAct"><input name="additionnalAct" type="checkbox" value="additionnalAct" />Yes</label><br />
+</p>
 </div>
 </div>
 </section>
@@ -79,6 +83,7 @@ textarea.form-control{
         nbActors = actSplit.length;
         hideActors(nbActors);
         setActors(actSplit);
+        setNbAct(nbActors);
     }
     function setActors(actorsList){
         for(var i= 0; i < actorsList.length; i++){
@@ -107,6 +112,9 @@ textarea.form-control{
             $('#act5').hide();
         }
 
+    }
+    function setNbAct(n){
+        $('.nbAct').text(n);
     }
 
 
