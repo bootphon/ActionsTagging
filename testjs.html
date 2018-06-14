@@ -1,10 +1,10 @@
 <!-- HIT template: TranscribeAudioVideo-v3.0 --><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
 <meta content="width=device-width,initial-scale=1" name="viewport" />
 <section class="container" id="TranscriptionFromAV"><!-- Instructions -->
-    <p id='actors'> ${actors}</p>
+    <p id='actors'>${actors}</p> 
 <div class="row">
 <div class="col-xs-12 col-md-12">
-<p>Consigne générale à écrire ici ...........</p>
+<h1>Consigne générale à écrire ici ...........</h1>
 </div>
 </div>
 <!-- End Instructions --><!-- Video transcription layout -->
@@ -20,18 +20,19 @@
 <div class="checkbox">
     
     <p id='instructions'>For each person check the box if you see them in the video</p>
-    <label id="act1"><input name="presentActor" type="checkbox" value="Child"/>Child</label><br />
-    <label id="act2"><input name="presentActor" type="checkbox" value="Parent"/>Parent</label><br />
-    <label id="act3"><input name="presentActor" type="checkbox" value="act3"/>Act3</label><br />
-    <label id="act4"><input name="presentActor" type="checkbox" value="act4"/>Act4</label><br />
-    <label id="act5"><input name="presentActor" type="checkbox" value="act5"/>Act5</label><br />
+    <label id="act1"><input name="presentActor" type="checkbox" value="Child"/><span >Child</span></label><br />
+    <label id="act2"><input name="presentActor" type="checkbox" value="Parent"/><span>Parent</span></label><br />
+    <label id="act3"><input name="presentActor" type="checkbox" value="act3"/><span>Act3</span></label><br />
+    <label id="act4"><input name="presentActor" type="checkbox" value="act4"/><span>Act4</span></label><br />
+    <label id="act5"><input name="presentActor" type="checkbox" value="act5"/><span>Act5</span></label><br />
     </fieldset>
 
 </div>
 </section><!-- End Video transcription layout -->
 <!-- Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries --><!-- External CSS references -->
 <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" /><!-- Open internal style sheet -->
-<style type="text/css">#collapseTrigger{
+<style type="text/css">
+#collapseTrigger{
   color:#fff;
   display: block;
   text-decoration: none;
@@ -60,12 +61,30 @@ textarea.form-control{
 </style>
 <!-- End internal style sheet --><!-- External JS references -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script><!-- Open internal javascript --><script>
-    function hideActors(){
+    function adaptActors(){
         var nbActors = 2;
         var act = $('#actors').text();
         var actSplit = act.split(';');
         nbActors = actSplit.length;
-        $('printActors').text(nbActors.toString());
+        hideActors(nbActors);
+        setActors(actSplit);
+    }
+    function setActors(actorsList){
+        for(var i= 0; i < actorsList.length; i++){
+            var j = i+1;
+            
+            $('#act'+j.toString()+' span').text(actorsList[i]);
+
+        }
+        /*
+        i= 1;
+        for (var act in actorsList){
+            $('#act'+i.toString()).text(act);
+            i++;
+        }
+        */
+    }
+    function hideActors(nbActors){
         if (nbActors == 3){
             $('#act4').hide();
             $('#act5').hide();
@@ -96,7 +115,7 @@ textarea.form-control{
             $('.collapse-text').text('(Click to expand)');
         }
         });
-        hideActors();
+        adaptActors();
         
         // end expand/collapse
     });
