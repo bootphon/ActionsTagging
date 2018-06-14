@@ -1,6 +1,7 @@
 <!-- Bootstrap v3.0.3 -->
 <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
 <section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+<p id='actors'>${actors}</p>
 <div class="row col-xs-12 col-md-12"><!-- Instructions -->
 <div class="panel panel-primary">
 <div class="panel-heading"><strong>Instructions</strong></div>
@@ -18,133 +19,111 @@
 <!-- End Instructions --><!-- Content Body -->
 
 <section>
-    <div class="well well-sm">
-        <video controls="" id="video" src="${media-link}" width="600">&nbsp;</video>
-    </div>
-    <section class='part' id='generalAction'>
-        <div class = "act1">
-            <fieldset>
-                <label>Discribe <span>X</span> action</label>
-                <div class="input-group">
-                    <input class="form-control" name="Q5FreeTextInput" size="120" type="text" />
-                </div>
-            </fieldset>
-        </div>
-        <div class = "act2">
-            <fieldset>
-                <label>Discribe <span>X</span> action</label>
-                <div class="input-group">
-                    <input class="form-control" name="Q5FreeTextInput" size="120" type="text" />
-                </div>
-            </fieldset>
-        </div>
-        <div class = "act3">
-            <fieldset>
-                <label>Discribe <span>X</span> action</label>
-                <div class="input-group">
-                    <input class="form-control" name="Q5FreeTextInput" size="120" type="text" />
-                </div>
-            </fieldset>
-        </div>   
-        <div class = "act4">
-            <fieldset>
-                <label>Discribe <span>X</span> action</label>
-                <div class="input-group">
-                    <input class="form-control" name="Q5FreeTextInput" size="120" type="text" />
-                </div>
-            </fieldset>
-        </div>    
-        <div class = "act5">
-            <fieldset>
-                <label>Discribe <span>X</span> action</label>
-                <div class="input-group">
-                    <input class="form-control" name="Q5FreeTextInput" size="120" type="text" />
-                </div>
-            </fieldset>
-        </div> 
-    </section>
-    <section class='part' id='specificAction'>
-        <div class='act' class = "act1">
-            <fieldset>
-                <label>What does <span>X</span> look?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-            <fieldset>
-                <label>What is <span>X</span> touching?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-            <fieldset>
-                <label>What does <span>X</span> point to?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-        </div> 
-        <div class = "act2">
-            <fieldset>
-                <label>What does <span>X</span> look?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-            <fieldset>
-                <label>What is <span>X</span> touching?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-            <fieldset>
-                <label>What does <span>X</span> point to?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-        </div>
-        <div class = "act3">
-            <fieldset>
-                <label>What does <span>X</span> look?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-            <fieldset>
-                <label>What is <span>X</span> touching?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-            <fieldset>
-                <label>What does <span>X</span> point to?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-        </div> 
-        <div class = "act4">
-            <fieldset>
-                <label>What does <span>X</span> look?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-            <fieldset>
-                <label>What is <span>X</span> touching?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-            <fieldset>
-                <label>What does <span>X</span> point to?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-        </div> 
-        <div class = "act5">
-            <fieldset>
-                <label>What does <span>X</span> look?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-            <fieldset>
-                <label>What is <span>X</span> touching?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-            <fieldset>
-                <label>What does <span>X</span> point to?</label>
-                <textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea>
-            </fieldset>
-        </div> 
+<div class="well well-sm">
+<video controls="" id="video" src="${media-link}" width="600">&nbsp;</video>
+</div>
 
+<section class="part" id="generalAction">
+<div class="act1">
+<fieldset><label>Discribe <span>X</span> action</label>
 
-    </section>
+<div class="input-group"><input class="form-control" name="Q5FreeTextInput" size="120" type="text" /></div>
+</fieldset>
+</div>
 
-</section>
-<!-- End Content Body -->
+<p>&nbsp;</p>
+
+<div class="act2">
+<fieldset><label>Discribe <span>X</span> action</label>
+
+<div class="input-group"><input class="form-control" name="Q5FreeTextInput" size="120" type="text" /></div>
+</fieldset>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="act3">
+<fieldset><label>Discribe <span>X</span> action</label>
+
+<div class="input-group"><input class="form-control" name="Q5FreeTextInput" size="120" type="text" /></div>
+</fieldset>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="act4">
+<fieldset><label>Discribe <span>X</span> action</label>
+
+<div class="input-group"><input class="form-control" name="Q5FreeTextInput" size="120" type="text" /></div>
+</fieldset>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="act5">
+<fieldset><label>Discribe <span>X</span> action</label>
+
+<div class="input-group"><input class="form-control" name="Q5FreeTextInput" size="120" type="text" /></div>
+</fieldset>
 </div>
 </section>
+
+<section class="part" id="specificAction">
+<p>&nbsp;</p>
+
+<div class="act1">
+<fieldset><label>What does <span>X</span> look?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+
+<fieldset><label>What is <span>X</span> touching?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+
+<fieldset><label>What does <span>X</span> point to?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="act2">
+<fieldset><label>What does <span>X</span> look?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+
+<fieldset><label>What is <span>X</span> touching?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+
+<fieldset><label>What does <span>X</span> point to?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="act3">
+<fieldset><label>What does <span>X</span> look?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+
+<fieldset><label>What is <span>X</span> touching?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+
+<fieldset><label>What does <span>X</span> point to?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="act4">
+<fieldset><label>What does <span>X</span> look?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+
+<fieldset><label>What is <span>X</span> touching?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+
+<fieldset><label>What does <span>X</span> point to?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="act5">
+<fieldset><label>What does <span>X</span> look?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+
+<fieldset><label>What is <span>X</span> touching?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+
+<fieldset><label>What does <span>X</span> point to?</label><textarea class="form-control" cols="120" name="Q6MultiLineTextInput" rows="5"></textarea></fieldset>
+</div>
+</section>
+</section>
+<!-- End Content Body --></div>
+</section>
 <!-- close container -->
-<style type="text/css">
-fieldset {
+<style type="text/css">fieldset {
     padding: 10px;
     background:#fbfbfb;
     border-radius:5px;
@@ -153,11 +132,9 @@ fieldset {
 .part div{
     border-width: 3px;
 }
-
 </style>
 <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" /><!-- Open internal style sheet -->
-<style type="text/css">
-#collapseTrigger{
+<style type="text/css">#collapseTrigger{
     color:#fff;
     display: block;
     text-decoration: none;
@@ -165,8 +142,9 @@ fieldset {
 #submitButton{
     white-space: normal;
 }
-.image{
+.video{
     margin-bottom: 15px; 
+    display: block;
 }
 textarea.form-control{
     height: 200px; /* Fix for textarea overlapping submit button */
@@ -184,8 +162,7 @@ textarea.form-control{
     hyphens: auto;
 }
 </style>
-<!-- End internal style sheet --><!-- External JS references -->
-<script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script><!-- Open internal javascript --><script>
+<!-- End internal style sheet --><!-- External JS references --><script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script><!-- Open internal javascript --><script>
         function adaptActors(){
             var nbActors = 2;
             var act = $('#actors').text();
@@ -198,7 +175,7 @@ textarea.form-control{
             for(var i= 0; i < actorsList.length; i++){
                 var j = i+1;
                 
-                $('#act'+j.toString()+' span').text(actorsList[i]);
+                $('.act'+j.toString()+' span').text(actorsList[i]);
 
             }
             /*
@@ -211,14 +188,14 @@ textarea.form-control{
         }
         function hideActors(nbActors){
             if (nbActors == 3){
-                $('#act4').hide();
-                $('#act5').hide();
+                $('.act4').hide();
+                $('.act5').hide();
             }else if (nbActors == 4){
-                $('#act5').hide();
+                $('.act5').hide();
             }else{
-                $('#act3').hide();
-                $('#act4').hide();
-                $('#act5').hide();
+                $('.act3').hide();
+                $('.act4').hide();
+                $('.act5').hide();
             }
 
         }
