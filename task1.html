@@ -1,14 +1,27 @@
 <!-- HIT template: TranscribeAudioVideo-v3.0 --><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
 <meta content="width=device-width,initial-scale=1" name="viewport" />
 <section class="container" id="TranscriptionFromAV"><!-- Instructions -->
-    <p id='actors'>${actors}</p> 
-<div class="row">
-<div class="col-xs-12 col-md-12">
-<h1>Consigne générale à écrire ici ...........</h1>
-</div>
-</div>
-<!-- End Instructions --><!-- Video transcription layout -->
+<p id="actors">${actors}</p>
 
+<div class="row">
+<section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+<div class="row col-xs-12 col-md-12"><!-- Instructions -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Instructions</strong></div>
+
+<div class="panel-body">
+<p>Enter instructions for your HIT. It is a good idea to:</p>
+
+<ul>
+	<li>Be as specific as possible in your instructions to eliminate ambiguity. For example, when asking workers to extract texts from an image, ask workers to type the texts exactly as shown in the image including capitalization, spaces and punctuations.</li>
+	<li>Include an example of a right answer and a wrong answer. Highlight important information where appropriate.</li>
+	<li>Clarify what you expect if a HIT is not doable because of missing data or other problems.</li>
+</ul>
+</div>
+</div>
+<!-- End Instructions --><!-- Content Body -->
+
+<section>
 <div class="row" id="workContent">
 <div class="col-xs-12 col-md-10 col-md-offset-1"><!-- Link to the video file -->
 <div class="well well-sm">
@@ -16,23 +29,22 @@
 </div>
 <!-- Worker input -->
 
-
 <div class="checkbox">
-    
-    <p id='instructions'>For each person check the box if you see them in the video</p>
-    <label id="act1"><input name="presentActor" type="checkbox" value="Child"/><span >Child</span></label><br />
-    <label id="act2"><input name="presentActor" type="checkbox" value="Parent"/><span>Parent</span></label><br />
-    <label id="act3"><input name="presentActor" type="checkbox" value="act3"/><span>Act3</span></label><br />
-    <label id="act4"><input name="presentActor" type="checkbox" value="act4"/><span>Act4</span></label><br />
-    <label id="act5"><input name="presentActor" type="checkbox" value="act5"/><span>Act5</span></label><br />
-    </fieldset>
-
+<p id="instructions">For each person check the box if you see them in the video</p>
+<label id="act1"><input name="presentActor" type="checkbox" value="Child" /><span>Child</span></label><br />
+<label id="act2"><input name="presentActor" type="checkbox" value="Parent" /><span>Parent</span></label><br />
+<label id="act3"><input name="presentActor" type="checkbox" value="act3" /><span>Act3</span></label><br />
+<label id="act4"><input name="presentActor" type="checkbox" value="act4" /><span>Act4</span></label><br />
+<label id="act5"><input name="presentActor" type="checkbox" value="act5" /><span>Act5</span></label></div>
 </div>
-</section><!-- End Video transcription layout -->
-<!-- Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries --><!-- External CSS references -->
+</div>
+</section>
+<!-- End Video transcription layout --><!-- Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries --><!-- External CSS references --></div>
+</section>
+</div>
+</section>
 <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" /><!-- Open internal style sheet -->
-<style type="text/css">
-#collapseTrigger{
+<style type="text/css">#collapseTrigger{
   color:#fff;
   display: block;
   text-decoration: none;
@@ -59,8 +71,7 @@ textarea.form-control{
   hyphens: auto;
 }
 </style>
-<!-- End internal style sheet --><!-- External JS references -->
-<script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script><!-- Open internal javascript --><script>
+<!-- End internal style sheet --><!-- External JS references --><script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script><!-- Open internal javascript --><script>
     function adaptActors(){
         var nbActors = 2;
         var act = $('#actors').text();
