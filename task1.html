@@ -1,25 +1,26 @@
 <!-- HIT template: TranscribeAudioVideo-v3.0 --><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
 <meta content="width=device-width,initial-scale=1" name="viewport" />
-<section class="container" id="TranscriptionFromAV"><!-- Instructions -->
+<section class="container" ><!-- Instructions -->
 <p id="actors">${actors}</p>
 
 <div class="row">
 <section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
 <div class="row col-xs-12 col-md-12"><!-- Instructions -->
 <div class="panel panel-primary">
-<div class="panel-heading"><strong>Instructions</strong></div>
+    <div class="panel-heading" id="instructions"><strong>Instructions</strong></div>
 
-<div class="panel-body">
-<p>Enter instructions for your HIT. It is a good idea to:</p>
+    <div class="panel-body">
+        <!-- <p>Enter instructions for your HIT. It is a good idea to:</p> -->
 
-<ul>
-	<li>Be as specific as possible in your instructions to eliminate ambiguity. For example, when asking workers to extract texts from an image, ask workers to type the texts exactly as shown in the image including capitalization, spaces and punctuations.</li>
-	<li>Include an example of a right answer and a wrong answer. Highlight important information where appropriate.</li>
-	<li>Clarify what you expect if a HIT is not doable because of missing data or other problems.</li>
-</ul>
+        <ul>
+            <li>Watch the video then indicate which actors are present</li>
+            <li>If there is no visible or distinguishable actor on the video, do not check any boxes. </li>
+            <li>An actor ins present if you can see both his hands and his head during at least part of the video</li>
+        </ul>
+    </div>
 </div>
-</div>
-<!-- End Instructions --><!-- Content Body -->
+<!-- End Instructions -->
+<!-- Content Body -->
 
 <section>
 <div class="row" id="workContent">
@@ -28,16 +29,31 @@
 <video controls="" id="video" src="${media-link}" width="600">&nbsp;</video>
 </div>
 <!-- Worker input -->
+<div>
+    <p class="instructions">Check the box if the the sentence is true for this video</p>
+    <p>
+        <input name="additionnalAct" type="checkbox" value="1" />There is more than <span class="nbAct">X</span> people in the video. <br/>
+        <input name="quality" type="checkbox" value="1" />The quality of the video does not allow to distinguish the different actors or their actions.  <br/>
+        <input name="quality" type="checkbox" value="1" />There's nobody on part of the video. 
+    </p>
+</div>
+<br/>
 
-<div class="checkbox">
-<p class="instructions">For each person check the box if you see them in the video</p>
-<label id="act1"><input name="presentActor" type="checkbox" value="Child" /><span>Child</span></label><br />
-<label id="act2"><input name="presentActor" type="checkbox" value="Parent" /><span>Parent</span></label><br />
-<label id="act3"><input name="presentActor" type="checkbox" value="act3" /><span>Act3</span></label><br />
-<label id="act4"><input name="presentActor" type="checkbox" value="act4" /><span>Act4</span></label><br />
-<label id="act5"><input name="presentActor" type="checkbox" value="act5" /><span>Act5</span></label></div>
+<div>
+    <p class="instructions">For each person check the box if you see them in the video</p>
+    <p>
+        <input name="presentActor" type="checkbox" value="Child" /><span>Child</span><br/>
+        <input name="presentActor" type="checkbox" value="Parent" /><span>Parent</span><br/>
+        <label id="act3"><input name="presentActor" type="checkbox" value="act3" /><span>Act3</span></label><br />
+        <label id="act4"><input name="presentActor" type="checkbox" value="act4" /><span>Act4</span></label><br />
+        <label id="act5"><input name="presentActor" type="checkbox" value="act5" /><span>Act5</span></label>
+        
+        <a href="#instructions">A doubt?</a>
+    </p>
 
-<p class="instructions">Do you see more than <span class="nbAct">X</span> people in the video ? <label id="additionnalAct"><input name="additionnalAct" type="checkbox" value="additionnalAct" />Yes</label></p>
+</div>
+
+
 </div>
 </div>
 </section>
@@ -46,7 +62,29 @@
 </div>
 </section>
 <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" /><!-- Open internal style sheet -->
-<style type="text/css">#collapseTrigger{
+<style type="text/css">
+.instructions{
+    color: #fff;
+    background-color: #85c1f5;
+    border-color: #428bca;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.instructions~p{
+    margin-left: 30px;
+}
+a{
+    margin-left: 30px;
+}
+#video{
+    display: block;
+    margin: auto;
+}
+#collapseTrigger{
   color:#fff;
   display: block;
   text-decoration: none;
