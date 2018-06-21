@@ -80,38 +80,15 @@ textarea.form-control{
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script>
 <!-- Open internal javascript -->
 <script>
-    function adaptActors(){
-        var nbActors = 2;
+    
+    function setActor(){
         var act = $('#actors').text();
-        var actSplit = act.split(';');
-        nbActors = actSplit.length;
-        hideActors(nbActors);
-        setActors(actSplit);
+        $('.act span').text(act);
+        addFormActors(act);
     }
 
-    function setActors(actorsList){
-        for(var i= 0; i < actorsList.length; i++){
-            var j = i+1;
-            
-            $('.act'+j.toString()+' span').text(actorsList[i]);
-            addFormActors(actorsList[i], i);
-        }
-    }
 
-    function hideActors(nbActors){
-        if (nbActors == 3){
-            $('.act4').hide();
-            $('.act5').hide();
-        }else if (nbActors == 4){
-            $('.act5').hide();
-        }else{
-            $('.act3').hide();
-            $('.act4').hide();
-            $('.act5').hide();
-        }
-    }
-
-    function makeInput(type, name, value, text, classname) {
+    function makeInput(type, name, value, text, classname){
         var label = document.createElement("label");
         var input = document.createElement("input");
         input.type = type;
@@ -162,23 +139,23 @@ textarea.form-control{
         return label;
     }
 
-    function addFormActors(actor, i) {
+    function addFormActors(actor) {
         //Part1
         var div = document.createElement("div");
-        div.className = "act" + i;
-        var textarea = makeTextArea("actor" + i, "120", "5", "Describe " + actor + " actions");
+        div.className = "act";
+        var textarea = makeTextArea("actor", "120", "5", "Describe " + actor + " actions");
         div.appendChild(textarea);
         generalAction.appendChild(div);
 
         //Part2
         var div = document.createElement("div");
-        div.classList.add("act" + i);
         div.classList.add("act");
-        var textarea = makeText("actor" + i, "120", "What does " + actor + " look?");
+        div.classList.add("act");
+        var textarea = makeText("actor", "120", "What does " + actor + " look?");
         div.appendChild(textarea);
-        var textarea = makeText("actor" + i, "120", "What is " + actor + " touching?");
+        var textarea = makeText("actor", "120", "What is " + actor + " touching?");
         div.appendChild(textarea);
-        var textarea = makeText("actor" + i, "120", "What does " + actor + " point to?");
+        var textarea = makeText("actor", "120", "What does " + actor + " point to?");
         div.appendChild(textarea);
 
         specificAction.appendChild(div);
@@ -186,7 +163,6 @@ textarea.form-control{
     }
 
     $(document).ready(function() {
-        var act = $('#actors').hide();
         // Instructions expand/collapse
         var content = $('#instructionBody');
         var trigger = $('#collapseTrigger');
@@ -201,7 +177,7 @@ textarea.form-control{
             $('.collapse-text').text('(Click to expand)');
         }
         });
-        adaptActors();
+        setActor();
         
         // end expand/collapse
     });
