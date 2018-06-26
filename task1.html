@@ -1,7 +1,7 @@
 <!-- HIT template: TranscribeAudioVideo-v3.0 --><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
 <meta content="width=device-width,initial-scale=1" name="viewport" />
 <section class="container" ><!-- Instructions -->
-<p id="actors">${actors}</p>
+<p id="actors">C:\Lea\Stage\Datas\Captures\Alex\010427C.PNG;C:\Lea\Stage\Datas\Captures\Alex\010427P.PNG;C:\Lea\Stage\Datas\Captures\Alex\010512C.PNG</p>
 
 <div class="row">
 <section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
@@ -29,29 +29,70 @@
 <video controls="" id="video" src="${media-link}" width="600">&nbsp;</video>
 </div>
 <!-- Worker input -->
-<div>
+<section>
     <p class="instructions">Check the box if the the sentence is true for this video</p>
     <p>
-        <input name="additionnalAct" type="checkbox" value="1" />There is more than <span class="nbAct">X</span> people in the video. <br/>
         <input name="quality" type="checkbox" value="1" />The quality of the video does not allow to distinguish the different actors or their actions.  <br/>
         <input name="quality" type="checkbox" value="1" />There's nobody on part of the video. 
     </p>
-</div>
+</section>
 <br/>
 
-<div>
+<section>
     <p class="instructions">For each person check the box if you see them in the video</p>
-    <p>
-        <input name="presentActor" type="checkbox" value="Child" /><span>Child</span><br/>
-        <input name="presentActor" type="checkbox" value="Parent" /><span>Parent</span><br/>
-        <label id="act3"><input name="presentActor" type="checkbox" value="act3" /><span>Act3</span></label><br />
-        <label id="act4"><input name="presentActor" type="checkbox" value="act4" /><span>Act4</span></label><br />
-        <label id="act5"><input name="presentActor" type="checkbox" value="act5" /><span>Act5</span></label>
-        
-        <a href="#instructions">A doubt?</a>
-    </p>
+    <div>
+        <div>
+            <div class="imgcont">
+                <img src="" alt="act1" class="actor" id="act1">
+                <div class="overlay">
+                    <div class="text">Hello World</div>
+                </div>
+            </div>
+            <div class="imgcont">
+                <img src="" alt="act2" class="actor" id="act2">
+                <div class="overlay">
+                    <div class="text">Hello World</div>
+                </div>
+            </div> 
+            <div class="imgcont">
+                <img src="" alt="act3" class="actor" id="act3">
+                <div class="overlay">
+                    <div class="text">Hello World</div>
+                </div>
+            </div>
+            <div class="imgcont">
+                <img src="" alt="act4" class="actor" id="act4">
+                <div class="overlay">
+                    <div class="text">Hello World</div>
+                </div>
+            </div>
+            <div class="imgcont">
+                <img src="" alt="act5" class="actor" id="act5">
+                <div class="overlay">
+                    <div class="text">Hello World</div>
+                </div>
+            </div>
+            <div class="imgcont">
+                <img src="https://image.freepik.com/free-icon/question-sign-on-person-head_318-58762.jpg" alt="addActor" class="actor" id="addActor">
+                <div class="overlay">
+                    <div class="text">There is someone else, I can see both his hands and his head </div>
+                </div>
+            </div>
+            
 
-</div>
+        </div> 
+        <a href="#instructions"> >>> A doubt?</a>
+        <div id ="checkbox" >
+            <input name="presentActor" type="checkbox" value="act1" />
+            <input name="presentActor" type="checkbox" value="act2" />
+            <input name="presentActor" type="checkbox" value="act3" />
+            <input name="presentActor" type="checkbox" value="act4" />
+            <input name="presentActor" type="checkbox" value="act5" />
+            <input name="presentActor" type="checkbox" value="addActor" />
+        </div>
+    </div>
+
+</section>
 
 
 </div>
@@ -78,11 +119,51 @@
     margin-left: 30px;
 }
 a{
-    margin-left: 30px;
+    margin-left: 50px;
+    font-size: 20px;
 }
 #video{
     display: block;
     margin: auto;
+}
+img{
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+
+}
+.imgcont {
+  position: relative;
+  width: 49%;
+  height: 40%;
+  display: inline-block;
+}
+.imgcont:hover .overlay{
+    opacity: 0.8;
+    
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #85c1f5;
+}
+.text{
+    color: #fff;
+    font-size: 200%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
 }
 #collapseTrigger{
   color:#fff;
@@ -92,9 +173,7 @@ a{
 #submitButton{
   white-space: normal;
 }
-.image{
-  margin-bottom: 15px; 
-}
+
 textarea.form-control{
   height: 200px; /* Fix for textarea overlapping submit button */
 }
@@ -110,6 +189,7 @@ textarea.form-control{
   -webkit-hyphens: auto;
   hyphens: auto;
 }
+
 </style>
 <!-- End internal style sheet -->
 <!-- External JS references -->
@@ -128,18 +208,11 @@ textarea.form-control{
     function setActors(actorsList){
         for(var i= 0; i < actorsList.length; i++){
             var j = i+1;
-            
-            $('#act'+j.toString()+' span').text(actorsList[i]);
-
+            changeIcon(document.getElementById("act"+j.toString()),actorsList[i]);
+            console.log(actorsList[i]);
         }
-        /*
-        i= 1;
-        for (var act in actorsList){
-            $('#act'+i.toString()).text(act);
-            i++;
-        }
-        */
     }
+
     function hideActors(nbActors){
         if (nbActors == 3){
             $('#act4').hide();
@@ -151,31 +224,29 @@ textarea.form-control{
             $('#act4').hide();
             $('#act5').hide();
         }
-
     }
+
+    function changeIcon(domImg,srcImage){
+        var img = new Image();
+        img.onload = function(){
+            // Load completed
+            domImg.src = this.src;
+        };
+        img.src = srcImage;
+    }
+
     function setNbAct(n){
         $('.nbAct').text(n);
     }
+    
 
-
-    $(document).ready(function() {
+    $(document).ready(function(){
         var act = $('#actors').hide();
-        // Instructions expand/collapse
-        var content = $('#instructionBody');
-        var trigger = $('#collapseTrigger');
-        content.hide();
-        $('.collapse-text').text('(Click to expand)');
-        trigger.click(function(){
-        content.toggle();
-        var isVisible = content.is(':visible');
-        if(isVisible){
-            $('.collapse-text').text('(Click to collapse)');
-        }else{
-            $('.collapse-text').text('(Click to expand)');
-        }
-        });
+        var check = $('#checkbox').hide();
         adaptActors();
         
         // end expand/collapse
     });
-</script><!-- Close internal javascript -->
+
+</script>
+<!-- Close internal javascript -->
