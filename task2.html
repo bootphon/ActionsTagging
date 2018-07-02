@@ -1,7 +1,7 @@
 <!-- Bootstrap v3.0.3 -->
 <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
 <section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
-<p id='actors'>${actors}</p>
+<p id='actors'>Parent;Child</p><!--replace the names of the actors with ${actors} 'actors' is the name of the column in the csv. It will work only if you have no more than 2 actors / line -->
 <div class="row col-xs-12 col-md-12"><!-- Instructions -->
 <div class="panel panel-primary">
 <div class="panel-heading"><strong>Instructions</strong></div>
@@ -24,160 +24,173 @@
 </div>
 
 <section class="part" id="generalAction">
+        <fieldset class="act1">
+            <label>Discribe <span>X</span> action</label>
+            <textarea class="form-control" cols="120" name="act1Action" rows="5" required></textarea>
+        </fieldset>
+        <!--Delete this fieldset if you have only one actor-->
+        <fieldset class="act2">
+            <label>Discribe <span>X</span> action</label>
+            <textarea class="form-control" cols="120" name="act1Action" rows="5" required></textarea>
+        </fieldset>
 </section>
 
 <section class="part" id="specificAction">
+    <fieldset>
+        <div class="act1">
+            <label>What does <span>X</span> look?</label> 
+            <input class="form-control" name="act1Look" size="120" type="text" required/>
+        
+            <label>What is <span>X</span> touching?</label> 
+            <input class="form-control" name="act1Touch" size="120" type="text" required/>
+        
+            <label>What does <span>X</span> point to?</label> 
+            <input class="form-control" name="act1Point" size="120" type="text" required/>
+        </div>
+        <!--Delete this div if you have only one actor-->
+        <div class="act2">
+            <label>What does <span>X</span> look?</label> 
+            <input class="form-control" name="act2Look" size="120" type="text" required/>
+        
+            <label>What is <span>X</span> touching?</label> 
+            <input class="form-control" name="act2Touch" size="120" type="text" required/>
+        
+            <label>What does <span>X</span> point to?</label> 
+            <input class="form-control" name="act2Point" size="120" type="text" required/>
+        </div>
+        
+        
+    </fieldset>
 </section>
+<section>
+    <button type="button">bouton</button>
+</section>
+
 
 </section>
 <!-- End Content Body --></div>
 </section>
 <!-- close container -->
-<style type="text/css">fieldset {
-    padding: 10px;
-    background:#fbfbfb;
-    border-radius:5px;
-    margin-bottom:5px;
-}
-.part div{
-    border-width: 3px;
-}
-</style>
-<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" /><!-- Open internal style sheet -->
-<style type="text/css">#collapseTrigger{
-    color:#fff;
-    display: block;
-    text-decoration: none;
-}
-#submitButton{
-    white-space: normal;
-}
-.video{
-    margin-bottom: 15px; 
-    display: block;
-}
-textarea.form-control{
-    height: 200px; /* Fix for textarea overlapping submit button */
-}
-/* CSS for breaking long words/urls */
-.dont-break-out {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    -ms-word-break: break-all;
-    word-break: break-all;
-    word-break: break-word;
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-}
-.act{
-
-    margin-bottom: 6px;
-}
-</style>
+<style type="text/css">
+    .instructions{
+        color: #fff;
+        background-color: #85c1f5;
+        border-color: #428bca;
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+    .instructions~p{
+        margin-left: 30px;
+    }
+    a{
+        margin-left: 50px;
+        font-size: 20px;
+    }
+    #video{
+        display: block;
+        margin: auto;
+    }
+    .text{
+        color: #fff;
+        font-size: 200%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    #collapseTrigger{
+      color:#fff;
+      display: block;
+      text-decoration: none;
+    }
+    #submitButton{
+      white-space: normal;
+    }
+    
+    textarea.form-control{
+      height: 200px; /* Fix for textarea overlapping submit button */
+    }
+    /* CSS for breaking long words/urls */
+    .dont-break-out {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      -ms-word-break: break-all;
+      word-break: break-all;
+      word-break: break-word;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }
+    button{
+        float:right;
+        margin-top: 5px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #428bca;
+        border-color: #679dcc;
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+    
+    </style>
 <!-- End internal style sheet --><!-- External JS references -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script>
 <!-- Open internal javascript -->
 <script>
     
-    function setActor(){
+    function adaptActors(){
         var act = $('#actors').text();
-        $('.act span').text(act);
-        addFormActors(act);
+        var actSplit = act.split(';');
+        nbActors = actSplit.length;
+        hideActors(nbActors);
+        setActors(actSplit);
     }
 
-
-    function makeInput(type, name, value, text, classname){
-        var label = document.createElement("label");
-        var input = document.createElement("input");
-        input.type = type;
-        input.name = name;
-        input.value = value;
-        input.class = classname;
-
-        label.appendChild(input);
-        label.appendChild(document.createTextNode(text));
-        label.appendChild(document.createElement("br"));
-        label.appendChild(input);
-       
-        return label;
+    function setActors(actorsList){
+        for(var i= 0; i < actorsList.length; i++){
+            var j = i+1;
+            $('.act'+j.toString()+' span').text(actorsList[i]);
+        }
     }
 
-    function makeText(name, size, text) {
-        var div = document.createElement("div");
-        div.className = "input-group";
-        var label = document.createElement("label");
-        var input = document.createElement("input");
-        input.type = "text";
-        input.name = name;
-        input.className = "form-control";
-        input.size = size;
-
-        
-        label.appendChild(document.createTextNode(text));
-        label.appendChild(input);
-        div.appendChild(label);
-        
-       
-        return label;
+    function hideActors(nbActors){
+        if (nbActors == 1){
+            $('.act2').hide();
+        }
     }
-    function makeTextArea(name, cols, rows, text) {
-        var label = document.createElement("label");
-        var input = document.createElement("textarea");
-        input.name = name;
-        input.className = "form-control";
-        input.cols = cols;
-        input.rows = rows;
-
-        
-        label.appendChild(document.createTextNode(text));
-        label.appendChild(input);
-        label.appendChild(document.createElement("br"));
-        
-       
-        return label;
-    }
-
-    function addFormActors(actor) {
-        //Part1
-        var div = document.createElement("div");
-        div.className = "act";
-        var textarea = makeTextArea("actor", "120", "5", "Describe " + actor + " actions");
-        div.appendChild(textarea);
-        generalAction.appendChild(div);
-
-        //Part2
-        var div = document.createElement("div");
-        div.classList.add("act");
-        div.classList.add("act");
-        var textarea = makeText("actor", "120", "What does " + actor + " look?");
-        div.appendChild(textarea);
-        var textarea = makeText("actor", "120", "What is " + actor + " touching?");
-        div.appendChild(textarea);
-        var textarea = makeText("actor", "120", "What does " + actor + " point to?");
-        div.appendChild(textarea);
-
-        specificAction.appendChild(div);
-
-    }
+    
+    
 
     $(document).ready(function() {
-        // Instructions expand/collapse
-        var content = $('#instructionBody');
-        var trigger = $('#collapseTrigger');
-        content.hide();
-        $('.collapse-text').text('(Click to expand)');
-        trigger.click(function(){
-        content.toggle();
-        var isVisible = content.is(':visible');
+        $('#actors').hide();
+        // Instructions next button
+        var button = $('button');
+        var part1 = $('#generalAction');
+        var part2 = $('#specificAction');
+        part2.hide();
+        button.text('Next ! (1/2)');
+        button.click(function(){
+        part1.toggle();
+        part2.toggle();
+        var isVisible = part1.is(':visible');
         if(isVisible){
-            $('.collapse-text').text('(Click to collapse)');
+            button.text('Next ! 1/2');
         }else{
-            $('.collapse-text').text('(Click to expand)');
+            button.text('Previous 2/2');
         }
         });
-        setActor();
+        adaptActors();
         
         // end expand/collapse
     });
