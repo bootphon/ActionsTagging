@@ -1,17 +1,20 @@
 <!-- Bootstrap v3.0.3 -->
 <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
 <section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
-<p id='actors'>Parent;Child</p><!--replace the names of the actors with ${actors} 'actors' is the name of the column in the csv. It will work only if you have no more than 2 actors / line -->
+<p id='actors'>Parent;Child</p>
 <div class="row col-xs-12 col-md-12"><!-- Instructions -->
 <div class="panel panel-primary">
 
 <div class="panel-heading"><strong>Instructions</strong></div>
 
 <div class="panel-body">
-<p>At first watch the entire video. Just focus on the image, there is no sound on this video. 
-    Then answer the questions as best you can. There are two pages of questions,
-     you can edit your answers and watch the video as many times as you like. 
-     All fields are required.
+<p>At first watch the entire video. <br/>
+    Just focus on the image, there is no sound on this video. <br/>
+    Then answer the questions as best you can. <br/>
+    There are two pages of questions, 
+     you can edit your answers and watch the video as many times as you like.  <br/>
+     Don't be afraid to repeat yourself from one page to another. <br/>
+     All fields are required. 
 </p>
 <!--
 <ul>
@@ -32,12 +35,12 @@
 
 <section class="part" id="generalAction">
         <fieldset class="act1">
-            <label>Discribe <span>X</span> action</label>
+            <label>Describe precisely each action performed by <span>X</span> and the objects manipulated during the action if any.</label>
             <textarea class="form-control" cols="120" name="act1Action" rows="5" required></textarea>
         </fieldset>
         <!--Delete this fieldset if you have only one actor-->
         <fieldset class="act2">
-            <label>Discribe <span>X</span> action</label>
+            <label>Describe precisely each action performed by <span>X</span> and the objects manipulated during the action if any.</label>
             <textarea class="form-control" cols="120" name="act2Action" rows="5" required></textarea>
         </fieldset>
 </section>
@@ -45,7 +48,7 @@
 <section class="part" id="specificAction">
     <fieldset>
         <div class="act1">
-            <label>What does <span>X</span> look?</label> 
+            <label>What does <span>X</span> look at?</label> 
             <input class="form-control" name="act1Look" size="120" type="text" required/>
         
             <label>What is <span>X</span> touching?</label> 
