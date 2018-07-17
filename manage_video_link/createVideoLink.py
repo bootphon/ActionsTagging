@@ -6,7 +6,7 @@ Created on Tue Jul 17 02:35:05 2018
 @author: lea
 """
 import os
-folderPath = ""
+folderPath = "/scratch2/lthamie/DATA/extracts_09_12_cha_0o"
 filename = "links.csv"
 
 file = open(filename, "w")
