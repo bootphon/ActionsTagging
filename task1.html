@@ -157,8 +157,8 @@
     
     function adaptActors(){
         /*
-        Extact present actors names form the actors tag, 
-        and edit the content of the instructions with their names
+            Extact present actors names form the actors tag, 
+            and edit the content of the instructions with their names
         */
         var act = $('#actors').text();
         var actSplit = act.split(';');
@@ -168,8 +168,8 @@
 
     function setActors(actorsList){
         /*
-        Edit actors names in guidelines of the textareas from the actorsList passed as a parameter 
-        You must have the same number of actors in your list as textareas
+            Edit actors names in guidelines of the textareas from the actorsList passed as a parameter 
+            You must have the same number of actors in your list as textareas
         */
         for(var i= 0; i < actorsList.length; i++){
             var j = i+1;
@@ -179,8 +179,8 @@
 
     $(document).ready(function() {
         /* 
-        Like a main function
-        called when the page is loaded 
+            Like a main function
+            called when the page is loaded 
         */
         $('#actors').hide();
         adaptActors();
