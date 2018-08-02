@@ -9,6 +9,8 @@ Différents scripts qui peuvent être utilisés sur la plateforme Amazon Mechani
   - toutes les appel (même dans les commentaires doivent correspondre à des colonnes
   - les colonnes doivent avoir le même nombre de lignes
 ## Task1
+![](https://i.imgur.com/s5tg5e0.png)
+
 
 ## Task2
 
