@@ -202,6 +202,11 @@
                     }
                     
                 }
+                if( j == 2 ){
+                    var button = makeRadioButton(name, "Nothing", " Nothing", "responseButton");
+                    div1.appendChild(button);
+                }
+
                 var p = document.createElement('p');
                 // create radio button to add a new object 
                 p.innerHTML = "<input type='radio' name='act"+ String(i) + attrib + "' value=''> Other : please describe it here <input type='text' name='act" + String(i) + attrib + "Other'/>";
